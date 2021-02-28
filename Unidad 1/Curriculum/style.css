@@ -2,13 +2,24 @@
     margin: auto;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body
 {
     font-family: 'Verdana';
 }
-.contenedor{
+
+.titulo{
+    color:rgb(255, 255, 255);
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+
+    background-color: rgb(0, 217, 255);
+}
+
+.container{
     padding: 60px 0;
     width: 90%;
     max-width: 1000px;
@@ -16,9 +27,23 @@ body
     overflow: hidden;
 }
 
-.titulo{
-    color:rgb(27, 78, 172);
+.textos-header{
+    color:rgb(255, 255, 255);
     font-size: 30px;
     text-align: center;
     margin-bottom: 60px;
+
+    background: url("conf.png") left top repeat-y,
+    hsl(105, 80%, 85%) url("conf.png") right top repeat-y;
+    background-size: 99px 99px;
+    background-color: gray;
+}
+
+footer
+{
+    margin-top:50px;
+    width:100%;
+    height:auto;
+    background-color: rgb(232, 232, 232);
+   
 }
