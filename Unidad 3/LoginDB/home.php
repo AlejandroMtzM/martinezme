@@ -11,7 +11,7 @@
 <body>
 
 	<div class="header">
-        <h1>Bienvenido desarrollador:</h1>
+        <h1>Bienvenido empleado:</h1>
     </div>
 
 	<?php 
@@ -43,10 +43,56 @@
       </nav> 
 			</div>
 	</div>
-    <div class="Contenido">
-     
-    </div>
+  <div class="container">
+    <form class="form">
 
+      <div class="row">
+          <div class="form-group col-sm-12 col-md-4 col-lg-12">
+                <label for="idCliente" class="control-label">ID Cliente</label>
+                <input id="idCliente" type="text" class="form-control" placeholder="Ingrese su ID"/>
+          </div>
+          <div class="form-group col-sm-12 col-md-8 col-lg-12">
+                <label for="nomCliente">Nombre</label>
+                <input id="nomCliente" type="text" class="form-control" placeholder="Nombre completo"/>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="form-group col-sm-12 col-md-6 col-lg-12">
+                <label for="dirCliente">Direccion</label>
+                <input id="dirCliente" type="text" class="form-control" placeholder="Calle, Numero y Colonia "/>
+          </div>
+          <div class="form-group col-sm-12 col-md-3 col-lg-12">
+            <label for="telCliente">CP</label>
+            <input id="telCliente" type="text" class="form-control" placeholder="Código Postal"/>
+          </div>
+          <div class="form-group col-sm-12 col-md-3 col-lg-12">
+                <label for="telCliente">Telefono</label>
+                <input id="telCliente" type="text" class="form-control" placeholder="Número telefono"/>
+          </div>
+      </div>
+
+
+      <div class="row">
+            <div class="form-group col-sm-12 col-md-6 col-lg-4">
+                  <label for="ciudad">Ciudad</label>
+                  <input id="ciudad" type="text" class="form-control" placeholder="Ciudad"/>
+            </div>
+            <div class="form-group col-sm-12 col-md-6 col-lg-4">
+                  <label for="estado">Estado</label>
+                  <input id="estado" type="text" class="form-control" placeholder="Estado"/>
+            </div>
+            <div class="form-group col-sm-12 col-md-12 col-lg-4">
+                  <label for="estado">País</label>
+                  <input id="estado" type="text" class="form-control" placeholder="País"/>
+            </div>
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">Ingresar</button>
+      <button type="reset" class="btn btn-default">Limpiar</button>
+    </form>
+    <div>
 	<div class="hoover">
 
 	<form action = "Salir.php" method = "post">

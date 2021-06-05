@@ -14,4 +14,11 @@ CREATE TABLE IF NOT EXISTS empleado (
 
 INSERT INTO empleado  (nombre, apPaterno, apMaterno, area, RFC) VALUES
 ('Marcos', 'Martinez', 'Mendoza', 'WEB', 'MAMM8305281H0'),
-('Cristina', 'Urbina', 'Arredondo', 'Sistemas', 'CRIS8305281H0');
+('Cristina', 'Urbina', 'Arredondo', 'Sistemas', 'CRIS8305281H0'),
+('Alejandro', 'Martinez', 'Mendoza', 'WEB', 'ALAL8305281H0'),
+('Guadalupe', 'Urbina', 'Arredondo', 'Sistemas', 'GUAG305281H0'),
+('Mauricio', 'Alvarado', 'Sandoval', 'Matematicas', 'MAUU8305281H0'),
+('Jos', 'Olguin', 'Perales', 'Sistemas', 'JOSS8305281H0'),
+('Gabriela', 'Santana', 'Mendoza', 'WEB', 'GABY8305281H0'),
+('Antonio', 'Perez', 'Pineda', 'Mecatronica', 'ANTY8305281H0');
+
