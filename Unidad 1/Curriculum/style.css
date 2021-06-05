@@ -14,7 +14,14 @@ body
     font-size: 30px;
     text-align: center;
     margin-bottom: 60px;
-    background-color: rgb(0, 217, 255);
+    background-color: rgb(0, 0, 0);
+}
+.titulo2{
+    color:rgb(0, 0, 0);
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+    
 }
 
 .container{
@@ -31,8 +38,8 @@ body
     text-align: center;
     margin-bottom: 60px;
 
-    background: url("conf.png") left top repeat-y,
-    hsl(105, 80%, 85%) url("conf.png") right top repeat-y;
+    background: url("https://images.vexels.com/media/users/3/143289/isolated/preview/759a1d9598eae60232ca7a56b19f5a7d-figura-de-ajedrez-pe-oacute-n-by-vexels.png") left top repeat-y,
+    hsl(105, 80%, 85%) url("https://images.vexels.com/media/users/3/143289/isolated/preview/759a1d9598eae60232ca7a56b19f5a7d-figura-de-ajedrez-pe-oacute-n-by-vexels.png") right top repeat-y;
     background-size: 99px 99px;
     background-color: gray;
 }
