@@ -1,5 +1,5 @@
-create database Empresa;
-use Empresa;
+create database loginEmpresa;
+use loginEmpresa;
 
 DROP TABLE IF EXISTS desarrollador;
 CREATE TABLE IF NOT EXISTS desarrollador (
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS desarrollador (
   PRIMARY KEY (idUsuario)
 );
 
-INSERT INTO desarrollador (idUsuario, nombre, apPaterno, apMaterno, area, login, password) VALUES
-('Marcos', 'Martinez', 'Mendoza', 'WEB', 'Marcos25', 'vtVeH03tfHKFy36d4J0Ltp3lRtee9HDxY3K'),
+INSERT INTO desarrollador (nombre, apPaterno, apMaterno, area, login, password) VALUES
+('Marcos', 'Martinez', 'Mendoza', 'WEB', 'marcos', 'martinez'),
 ('Cristina', 'Urbina', 'Arredondo', 'Sistemas', 'Xris', '8d8b1040f9408f0cb5f7f1fff8bfc463');
 
