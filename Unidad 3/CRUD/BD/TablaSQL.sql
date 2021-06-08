@@ -14,5 +14,6 @@ CREATE TABLE IF NOT EXISTS Cliente (
   PRIMARY KEY (idCliente)
 );
 
-INSERT INTO Cliente (idCliente, nombre, CP, area, telefono, ciudad, estado, pais) VALUES
-(1, 'Marcos', 88290, 'web', '1234', 'nuevo laredo', 'tamaulipas', 'mexico');
+INSERT INTO Cliente (idCliente, nombre,direccion, CP, telefono, ciudad, estado, pais) VALUES
+(1, 'Marcos','tec',88290, '1234', 'nuevo laredo', 'tamaulipas', 'mexico'),
+(2, 'Alejandro','tec',88290, '1234', 'nuevo laredo', 'tamaulipas', 'mexico');

@@ -16,21 +16,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $idCliente = $input_idCliente;
     }
     // validar nombre
-    $input_name = trim($_POST["nombre"]);
-    if(empty($input_name)){
+    $input_nombre = trim($_POST["nombre"]);
+    if(empty($input_nombre)){
         $nombre_err = "Ingresa un nombre válido.";
-    } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+    } elseif(!filter_var($input_nombre, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
         $nombre_err = "Ingresa un nombre válido.";
     } else{
-        $nombre = $input_name;
+        $nombre = $input_nombre;
     }
     
     // validar direccion
-    $input_address = trim($_POST["direccion"]);
-    if(empty($input_address)){
+    $input_direccion = trim($_POST["direccion"]);
+    if(empty($input_direccion)){
         $direccion_err = "Ingresa un dato válido.";     
     } else{
-        $direccion = $input_address;
+        $direccion = $input_direccion;
     }
     // validar CP
     $input_CP = trim($_POST["CP"]);
@@ -76,8 +76,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_idCliente, $param_nombre, $param_direccion, $param_CP, $param_telefono, $param_ciudad,$param_estado, $param_pais);
-            
+            mysqli_stmt_bind_param($stmt, "ssssssss", $param_idCliente, $param_nombre, $param_direccion, $param_CP, $param_telefono, $param_ciudad,$param_estado, $param_pais);
+
             // Set parameters $idCliente = $nombre = $direccion = $CP = $telefono = $ciudad = $estado = $pais = "";
             $param_idCliente = $idCliente;
             $param_nombre = $nombre;
@@ -130,12 +130,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group">
                         <label>idCliente</label>
-                            <input type="text" idCliente="idCliente" class="form-control <?php echo (!empty($idCliente_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $idCliente; ?>">
+                            <input type="text" name="idCliente" class="form-control <?php echo (!empty($idCliente_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $idCliente; ?>">
                             <span class="invalid-feedback"><?php echo $idCliente_err;?></span>
                         </div>
                         <div class="form-group">
                         <label>nombre</label>
-                            <input type="text" nombre="nombre" class="form-control <?php echo (!empty($nombre_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $nombre; ?>">
+                            <input type="text" name="nombre" class="form-control <?php echo (!empty($nombre_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $nombre; ?>">
                             <span class="invalid-feedback"><?php echo $nombre_err;?></span>
                         </div>
                         <div class="form-group">

@@ -5,6 +5,10 @@
 	
 	<link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 	<title>Login exitoso</title>
       <script>
@@ -19,8 +23,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Detalles del cliente</h2>
-                        <a href="ingresar.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Agregar</a>
+                        <h2 class="pull-left">Bienvenido usuario</h2>
+                        <a href="Create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Agregar</a>
+                       
                     </div>
                     <?php
                     session_start();
@@ -35,8 +40,7 @@
                             echo '<table class="table table-bordered table-striped">';
                                 echo "<thead>";
                                     echo "<tr>";
-                                        echo "<th>#</th>";
-                                        
+                                        echo "<th>idCliente</th>";                                   
                                         echo "<th>nombre</th>";
                                         echo "<th>direccion</th>";
                                         echo "<th>CP</th>";
@@ -59,9 +63,9 @@
                                         echo "<td>" . $row['estado'] . "</td>";
                                         echo "<td>" . $row['pais'] . "</td>";
                                         echo "<td>";
-                                            echo '<a href="read.php?id='. $row['id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                            echo '<a href="update.php?id='. $row['id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                                            echo '<a href="delete.php?id='. $row['id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                            echo '<a href="Read.php?idCliente='. $row['idCliente'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                            echo '<a href="Update.php?idCliente='. $row['idCliente'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                            echo '<a href="Delete.php?idCliente='. $row['idCliente'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                         echo "</td>";
                                     echo "</tr>";
                                 }

@@ -3,27 +3,20 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$idCliente = $nombre = $direccion = $CP = $telefono = $ciudad = $estado = $pais = "";
-$idCliente_err = $nombre_err = $direccion_err = $CP_err = $telefono_err = $ciudad_err = $estado_err = $pais_err = "";
+$nombre = $direccion = $CP = $telefono = $ciudad = $estado = $pais = "";
+$nombre_err = $direccion_err = $CP_err = $telefono_err = $ciudad_err = $estado_err = $pais_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["idCliente"]) && !empty($_POST["idCliente"])){
-    
-    // validar idcliente
-    $input_idCliente = trim($_POST["idCliente"]);
-    if(empty($input_idCliente)){
-        $idCliente_err = "Ingresa un dato válido.";     
-    } else{
-        $idCliente = $input_idCliente;
-    }
+    $idCliente = $_POST["idCliente"];
     // validar nombre
-    $input_name = trim($_POST["nombre"]);
-    if(empty($input_name)){
+    $input_nombre = trim($_POST["nombre"]);
+    if(empty($input_nombre)){
         $nombre_err = "Ingresa un nombre válido.";
-    } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+    } elseif(!filter_var($input_nombre, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
         $nombre_err = "Ingresa un nombre válido.";
     } else{
-        $nombre = $input_name;
+        $nombre = $input_nombre;
     }
     
     // validar direccion
@@ -77,7 +70,7 @@ if(isset($_POST["idCliente"]) && !empty($_POST["idCliente"])){
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_idCliente, $param_nombre, $param_direccion, $param_CP, $param_telefono, $param_ciudad,$param_estado, $param_pais);
+            mysqli_stmt_bind_param($stmt, "ssssssss", $param_idCliente, $param_nombre, $param_direccion, $param_CP, $param_telefono, $param_ciudad,$param_estado, $param_pais);
             
             // Set parameters $idCliente = $nombre = $direccion = $CP = $telefono = $ciudad = $estado = $pais = "";
             $param_idCliente = $idCliente;
@@ -109,16 +102,16 @@ if(isset($_POST["idCliente"]) && !empty($_POST["idCliente"])){
     // Check existence of id parameter before processing further
     if(isset($_GET["idCliente"]) && !empty(trim($_GET["idCliente"]))){
         // Get URL parameter
-        $id =  trim($_GET["idCliente"]);
+        $idCliente =  trim($_GET["idCliente"]);
   
         // Prepare a select statement
         $sql = "SELECT * FROM Cliente WHERE idCliente = ?";
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_id);
+            mysqli_stmt_bind_param($stmt, "i", $param_idCliente);
             
             // Set parameters
-            $param_id = $id;
+            $param_idCliente = $idCliente;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -184,13 +177,13 @@ if(isset($_POST["idCliente"]) && !empty($_POST["idCliente"])){
                     <p>Favor de a continuación actualizar sus datos.</p>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                     <div class="form-group">
-                        <label>idCliente</label>
-                            <input type="text" idCliente="idCliente" class="form-control <?php echo (!empty($idCliente_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $idCliente; ?>">
+                    <label>idCliente</label>
+                            <input type="text" name="idCliente" class="form-control <?php echo (!empty($idCliente_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $idCliente; ?>">
                             <span class="invalid-feedback"><?php echo $idCliente_err;?></span>
                         </div>
                         <div class="form-group">
                         <label>nombre</label>
-                            <input type="text" nombre="nombre" class="form-control <?php echo (!empty($nombre_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $nombre; ?>">
+                            <input type="text" name="nombre" class="form-control <?php echo (!empty($nombre_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $nombre; ?>">
                             <span class="invalid-feedback"><?php echo $nombre_err;?></span>
                         </div>
                         <div class="form-group">
