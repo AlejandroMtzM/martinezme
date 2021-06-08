@@ -70,10 +70,9 @@ if(isset($_POST["idCliente"]) && !empty($_POST["idCliente"])){
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssssssss", $param_idCliente, $param_nombre, $param_direccion, $param_CP, $param_telefono, $param_ciudad,$param_estado, $param_pais);
+            mysqli_stmt_bind_param($stmt, "sssssssi", $param_nombre, $param_direccion, $param_CP, $param_telefono, $param_ciudad,$param_estado, $param_pais, $param_idCliente);
             
-            // Set parameters $idCliente = $nombre = $direccion = $CP = $telefono = $ciudad = $estado = $pais = "";
-            $param_idCliente = $idCliente;
+            // Set parameters $idCliente = $nombre = $direccion = $CP = $telefono = $ciudad = $estado = $pais = "";           
             $param_nombre = $nombre;
             $param_direccion = $direccion;
             $param_CP = $CP;
@@ -81,7 +80,7 @@ if(isset($_POST["idCliente"]) && !empty($_POST["idCliente"])){
             $param_ciudad = $ciudad;
             $param_estado = $estado;
             $param_pais = $pais;
-            
+            $param_idCliente = $idCliente;
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records created successfully. Redirect to landing page
