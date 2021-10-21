@@ -1,0 +1,39 @@
+body{
+    background: #010303;  
+    font-size: 18px;
+}
+header{
+    font-size: 30px;
+    text-align: center;
+    border-radius: 20px;
+    background: #000000;
+    color: white;
+}
+.modal-content{
+    background-color: rgba(224, 224, 224, 0.5);
+    opacity: .95;
+    padding: 20px;
+    box-shadow: 0px 0px 3px #7781867a;
+    position: relative;
+    top: 10px;
+}
+.modal-content.Mat{
+    background-color: rgba(164, 184, 219, 0.658);
+    opacity: .95;
+    padding: 20px;
+    box-shadow: 0px 0px 3px #7781867a;
+    position: relative;
+    top: 10px;
+}
+.texto{
+    border-radius: 24px;
+    border: 2px solid #a941c9ec;
+}
+.texto:focus{
+    user-select: none;
+    border: 2px solid #237a9cec;
+}
+.titulos{
+    font-family: "Gill Sans Extrabold", Helvetica, sans-serif
+}
+

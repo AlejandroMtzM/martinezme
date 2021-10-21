@@ -1,0 +1,59 @@
+body{
+  font-family: sans-serif;
+  font-size:1.2em;
+  background:lightgray;
+}
+h1{
+  font-family: 'Bungee Shade', cursive;
+}
+h1,h2{
+  text-align:center;
+  font-variant: small-caps;
+}
+.box{
+  text-align:center;
+  padding-top: 50px;
+  float:left;
+  height:300px;
+  width:49%;
+  margin:2px;
+  border-top: 3px dashed black;
+}
+.left-div{
+  border-right: 3px dashed black;
+}
+input{
+  border-color: transparent;
+  text-align:center;
+  width:99%;
+}
+#input,#output{
+  font-size:2em;
+  background:transparent;
+  border:2px dashed black;
+  word-wrap: break-word;
+}
+input:focus{
+  border-bottom-color:black;
+  outline:none;
+}
+.op-div{
+  width:99%;
+}
+#output{
+  margin-top:0px;
+}
+*::selection{
+  background:white;
+  color:#4caf50;
+}
+@media only screen and (max-width: 680px) {
+  .box{
+        width:100%;
+        float:auto;
+        height:auto;
+  }
+  h1{
+    margin:0px;
+  }
+}

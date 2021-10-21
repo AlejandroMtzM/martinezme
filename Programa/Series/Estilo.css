@@ -1,0 +1,78 @@
+body{
+    background: #010303;  
+    font-size: 18px;
+}
+header{
+    font-size: 30px;
+    text-align: center;
+    border-radius: 20px;
+    background: #000000;
+    color: white;
+}
+.modal-content{
+    background-color: rgba(224, 224, 224, 0.5);
+    opacity: .95;
+    padding: 20px;
+    box-shadow: 0px 0px 3px #7781867a;
+    position: relative;
+    top: 10px;
+}
+.modal-content.Mat{
+    background-color: rgba(164, 184, 219, 0.658);
+    opacity: .95;
+    padding: 20px;
+    box-shadow: 0px 0px 3px #7781867a;
+    position: relative;
+    top: 10px;
+}
+.texto{
+    border-radius: 24px;
+    border: 2px solid #6b2281ec;
+}
+.texto:focus{
+    user-select: none;
+    border: 2px solid #237a9cec;
+}
+.titulos{
+    font-family: "Gill Sans Extrabold", Helvetica, sans-serif
+}
+
+.Formulario input[type ="radio"]{
+    display: none;
+}
+.Formulario .radio label{
+    color: #060c0e;
+    padding: 5px 15px 5px 30px;
+    display: inline-block;
+    position: relative;
+    font-size: 1em;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.Formulario .radio label:hover{
+    background: #81b6e483;
+}
+.Formulario .radio label:before{
+    content: "";
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    background: none;
+    border: 3px solid #366972;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    top: 6px;
+}
+.Formulario input[type ="radio"]:checked + label{
+    padding: 5px 15px;
+    background: #1b82a1;
+    border-radius:  2px;
+    color: rgb(0, 0, 0);
+}
+.Formulario input[type ="radio"]:checked + label::before{
+    display: none;
+}

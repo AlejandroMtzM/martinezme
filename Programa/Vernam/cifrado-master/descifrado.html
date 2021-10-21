@@ -1,0 +1,536 @@
+<html>
+<head>
+  <meta name="tipo_contenido"  content="text/html;" http-equiv="content-type" charset="utf-8">
+<script type="text/javascript">
+function PromptDemo() {
+var contrasena=14;
+//alert("El numero en binario es:" + contrasena.toString(2));
+var binario = [];
+//Ingresamos un mensaje a mostrar
+var textoclaro = prompt("¿cuál es tu texto cifrado?", "");
+//Definir el tamaño del textoclaro
+a=textoclaro.length;
+//alert(a);
+var conversion = [];
+//alert(converionbinario);
+var separaciobinario1 = [];
+var separaciobinario2 = [];
+var separaciobinario3 = [];
+var separaciobinario4 = [];
+var separaciobinario5 = [];
+var separaciobinario6 = [];
+var separaciobinario7 = [];
+var separaciobinario8 = [];
+var terminapalabra = 0;
+var conjuntobinario = [];
+var recorridobinario = 0;
+var apoyobinario = 0;
+var arraybinario=0;
+for (var i = 0; i <= textoclaro.length; i++) {
+  if (textoclaro[i]=="0"||textoclaro[i]=="1") {
+    //alert("dfsadf");
+    if (textoclaro[i]==0&&recorridobinario==apoyobinario) {
+      //alert("primerapalabra");
+      separaciobinario1="0";
+      //alert(recorridobinario);
+    }
+    else if (textoclaro[i]==1&&recorridobinario==apoyobinario) {
+      separaciobinario1="1";
+    }
+    //alert(separaciobinario1);
+    //alert(i);
+    recorridobinario=apoyobinario+2;
+    //alert(recorridobinario);
+    if (textoclaro[i]==0&&recorridobinario==i) {
+      separaciobinario2="0";
+      //alert("segundapalabra");
+    }
+    else if (textoclaro[i]==1&&recorridobinario==i) {
+      separaciobinario2="1";
+      //alert("segundapalabra");
+    }
+    //alert(separaciobinario1);
+    recorridobinario=apoyobinario+4;
+    if (textoclaro[i]==0&&recorridobinario==i) {
+      separaciobinario3="0";
+      //alert(i);
+    }
+    else if (textoclaro[i]==1&&recorridobinario==i) {
+      separaciobinario3="1";
+      //alert(separaciobinario3);
+    }
+    //alert(separaciobinario3);
+    recorridobinario=apoyobinario+6;
+    if (textoclaro[i]==0&&recorridobinario==i) {
+      separaciobinario4="0";
+    }
+    else if (textoclaro[i]==1&&recorridobinario==i) {
+      separaciobinario4="1";
+    }
+
+    recorridobinario=apoyobinario+8;
+    if (textoclaro[i]==0&&recorridobinario==i) {
+      separaciobinario5="0";
+    }
+    else if (textoclaro[i]==1&&recorridobinario==i) {
+      separaciobinario5="1";
+    }
+
+    recorridobinario=apoyobinario+10;
+    if (textoclaro[i]==0&&recorridobinario==i) {
+      separaciobinario6="0";
+    }
+    else if (textoclaro[i]==1&&recorridobinario==i) {
+      separaciobinario6="1";
+    }
+
+    recorridobinario=apoyobinario+12;
+    if (textoclaro[i]==0&&recorridobinario==i) {
+      separaciobinario7="0";
+      //alert("septimapalabra");
+    }
+    else if (textoclaro[i]==1&&recorridobinario==i) {
+      separaciobinario7="1";
+      //alert("septimapalabra");
+    }
+
+    recorridobinario=apoyobinario+14;
+    if (textoclaro[i]==0&&recorridobinario==i) {
+      separaciobinario8="0";
+      apoyobinario=recorridobinario+2;
+      terminapalabra=1;
+      //alert(i);
+    }
+    else if (textoclaro[i]==1&&recorridobinario==i) {
+      separaciobinario8="1";
+      apoyobinario=recorridobinario+2;
+      terminapalabra=1;
+      //alert(i);
+    }
+  }
+  if (terminapalabra==1) {
+//    alert("seterminounapalabra");
+    conjuntobinario[arraybinario] = separaciobinario1+separaciobinario2+separaciobinario3+separaciobinario4+separaciobinario5+separaciobinario6+separaciobinario7+separaciobinario8;
+    terminapalabra=0;
+    arraybinario++;
+  }
+}
+//separaciobinario1 = "0";
+//separaciobinario2 = "1";
+//conjuntobinario = separaciobinario1+separaciobinario2+separaciobinario3+separaciobinario4+separaciobinario5+separaciobinario6+separaciobinario7+separaciobinario8;
+//alert(conjuntobinario);
+//alert(conjuntobinario.length);
+//alert(textoclaro.length);
+//Separar el textoclaro
+var sep = [];
+//Ingresar cada letra en un apartado separado de la matriz
+for (var i = 0; i < textoclaro.length; i++) {
+  sep[i]=textoclaro[i];
+}
+//Prueba de la separacion de la frase
+for (var x = 0; x < textoclaro.length; x++) {
+  //alert(sep[x]);
+  //alert(sep);
+}
+//Lista de ascii a binario
+//Fin del codigo ascii
+
+//var contrasena=5;
+var contrasenabinario;
+//alert(contrasenabinario);
+var numeroaceptable;
+var algoritmo;
+algoritmo=(contrasena*contrasena)-88;
+contrasena=algoritmo;
+while (numeroaceptable!=1) {
+  if (contrasena<1) {
+    contrasena++;
+  }
+  else if (contrasena<=255 && contrasena>0) {
+    contrasenabinario=(contrasena.toString(2));
+    numeroaceptable=1;
+  }
+  else {
+    contrasena=contrasena/2;
+    contrasena= Math.round(contrasena);
+  }
+}
+
+//alert(contrasenabinario);
+//alert(contrasenabinario.length);
+//clave de cifrado
+
+var clave = ["1","1","1","1","0","0","0","0"];
+//alert(contrasenabinario.length);
+var x = 0;
+var temp2;
+if (contrasenabinario.length==8) {
+  for (var i = 0; i < 7; i++) {
+    clave[i]=contrasenabinario[i];
+  }
+}
+
+
+else if (contrasenabinario.length<8) {
+  //alert("fdsfs");
+  temp2 = 8 - contrasenabinario.length;
+  //alert(temp2);
+  for (var i = 0; i < temp2; i++) {
+    clave[i]=0;
+    x++;
+    //alert(clave);
+  }
+  //alert(clave);
+  //alert(x);
+  for (var t = x; t < 8; t++) {
+    //alert(clave);
+    clave[t]=contrasenabinario[t-x];
+  }
+  // alert(clave + "fasfd");
+  console.log("La clave es: " + clave);
+}
+//alert(clave);
+
+//variable con texto sifrado
+var cifrado = [];
+var h;
+var z = 0;
+var binariomatriz;
+var temp;
+var arraycifrado = 0;
+for (h = 0; h < conjuntobinario.length; h++) {
+  //alert("textoclaro.length");
+  for (binariomatriz = 0; binariomatriz < 8; binariomatriz++) {
+    temp = conjuntobinario[h][binariomatriz];
+    //alert(temp);
+    //alert(temp);
+    if (temp == clave[z]) {
+      //alert("Se ejecuto el if");
+      //alert(binario[h]);
+      //alert("gfhfdhfd")
+      cifrado[arraycifrado] = 0;
+      //alert(cifrado);
+    }
+    else {
+      cifrado[arraycifrado] = 1;
+      //alert(binario[h][binariomatriz]);
+      //alert(binariomatriz);
+      //alert(cifrado);
+    }
+    z++;
+    if (z==8) {
+      z=0;
+    }
+    arraycifrado++;
+  }
+  arraycifrado=(h+1)*8;
+  //alert(cifrado);
+}
+console.log(cifrado);
+//console.log(cifrado.length);
+//alert(cifrado);
+conversion = [];
+separaciobinario1 = [];
+separaciobinario2 = [];
+separaciobinario3 = [];
+separaciobinario4 = [];
+separaciobinario5 = [];
+separaciobinario6 = [];
+separaciobinario7 = [];
+separaciobinario8 = [];
+terminapalabra = 0;
+conjuntobinario = [];
+recorridobinario = 0;
+apoyobinario = 0;
+arraybinario=0;
+for (var i = 0; i <= cifrado.length; i++) {
+  if (cifrado[i]=="0"||cifrado[i]=="1") {
+    //console.log(cifrado[i]);
+    //console.log(recorridobinario);
+    //console.log(apoyobinario);
+    if (cifrado[i]==0&&recorridobinario==apoyobinario) {
+      //alert("primerapalabra");
+      separaciobinario1="0";
+      //alert(recorridobinario);
+    }
+    else if (cifrado[i]==1&&recorridobinario==apoyobinario) {
+      separaciobinario1="1";
+    }
+    //alert(separaciobinario1);
+    //alert(i);
+    recorridobinario=apoyobinario+1;
+    //alert(recorridobinario);
+    if (cifrado[i]==0&&recorridobinario==i) {
+      separaciobinario2="0";
+      //alert("segundapalabra");
+    }
+    else if (cifrado[i]==1&&recorridobinario==i) {
+      separaciobinario2="1";
+      //alert("segundapalabra");
+    }
+    //alert(separaciobinario1);
+    recorridobinario=apoyobinario+2;
+    if (cifrado[i]==0&&recorridobinario==i) {
+      separaciobinario3="0";
+      //alert(i);
+    }
+    else if (cifrado[i]==1&&recorridobinario==i) {
+      separaciobinario3="1";
+      //alert(separaciobinario3);
+    }
+    //alert(separaciobinario3);
+    recorridobinario=apoyobinario+3;
+    if (cifrado[i]==0&&recorridobinario==i) {
+      separaciobinario4="0";
+    }
+    else if (cifrado[i]==1&&recorridobinario==i) {
+      separaciobinario4="1";
+    }
+
+    recorridobinario=apoyobinario+4;
+    if (cifrado[i]==0&&recorridobinario==i) {
+      separaciobinario5="0";
+    }
+    else if (cifrado[i]==1&&recorridobinario==i) {
+      separaciobinario5="1";
+    }
+
+    recorridobinario=apoyobinario+5;
+    if (cifrado[i]==0&&recorridobinario==i) {
+      separaciobinario6="0";
+    }
+    else if (cifrado[i]==1&&recorridobinario==i) {
+      separaciobinario6="1";
+    }
+
+    recorridobinario=apoyobinario+6;
+    if (cifrado[i]==0&&recorridobinario==i) {
+      separaciobinario7="0";
+      //alert("septimapalabra");
+    }
+    else if (cifrado[i]==1&&recorridobinario==i) {
+      separaciobinario7="1";
+      //alert("septimapalabra");
+    }
+
+    recorridobinario=apoyobinario+7;
+    if (cifrado[i]==0&&recorridobinario==i) {
+      separaciobinario8="0";
+      apoyobinario=recorridobinario+1;
+      terminapalabra=1;
+      //alert(i);
+    }
+    else if (cifrado[i]==1&&recorridobinario==i) {
+      separaciobinario8="1";
+      apoyobinario=recorridobinario+1;
+      terminapalabra=1;
+      //alert(i);
+    }
+  }
+  if (terminapalabra==1) {
+    //alert("seterminounapalabra");
+    conjuntobinario[arraybinario] = separaciobinario1+separaciobinario2+separaciobinario3+separaciobinario4+separaciobinario5+separaciobinario6+separaciobinario7+separaciobinario8;
+    terminapalabra=0;
+    arraybinario++;
+  }
+}
+console.log("https://github.com/Emmanuel00");
+//alert(conjuntobinario);
+//alert(conjuntobinario.length);
+//11111111
+//prueba de la matriz binaria
+//alert(binario);
+
+for (var y = 0; y < conjuntobinario.length; y++) {
+  if (conjuntobinario[y]=="01000001") {
+    binario[y]="A";
+    //alert("YA");
+  }
+  else if (conjuntobinario[y]=="01000010") {
+    binario[y]="B";
+  }
+  else if (conjuntobinario[y]=="01000011") {
+    binario[y]="C";
+  }
+  else if (conjuntobinario[y]=="01000100") {
+    binario[y]="D";
+  }
+  else if (conjuntobinario[y]=="01000101") {
+    binario[y]="E";
+  }
+  else if (conjuntobinario[y]=="01000110") {
+    binario[y]="F";
+  }
+  else if (conjuntobinario[y]=="01000111") {
+    binario[y]="G";
+  }
+  else if (conjuntobinario[y]=="01001000") {
+    binario[y]="H";
+  }
+  else if (conjuntobinario[y]=="01001001") {
+    binario[y]="I";
+  }
+  else if (conjuntobinario[y]=="01001010") {
+    binario[y]="J";
+  }
+  else if (conjuntobinario[y]=="01001011") {
+    binario[y]="K";
+  }
+  else if (conjuntobinario[y]=="01001100") {
+    binario[y]="L";
+  }
+  else if (conjuntobinario[y]=="01001101") {
+    binario[y]="M";
+  }
+  else if (conjuntobinario[y]=="01001110") {
+    binario[y]="N";
+  }
+  else if (conjuntobinario[y]=="01001111") {
+    binario[y]="O";
+  }
+  else if (conjuntobinario[y]=="01010000") {
+    binario[y]="P";
+  }
+  else if (conjuntobinario[y]=="01010001") {
+    binario[y]="Q";
+  }
+  else if (conjuntobinario[y]=="01010010") {
+    binario[y]="R";
+  }
+  else if (conjuntobinario[y]=="01010011") {
+    binario[y]="S";
+  }
+  else if (conjuntobinario[y]=="01010100") {
+    binario[y]="T";
+  }
+  else if (conjuntobinario[y]=="01010101") {
+    binario[y]="U";
+  }
+  else if (conjuntobinario[y]=="01010110") {
+    binario[y]="V";
+  }
+  else if (conjuntobinario[y]=="01010111") {
+    binario[y]="W";
+  }
+  else if (conjuntobinario[y]=="01011000") {
+    binario[y]="X";
+  }
+  else if (conjuntobinario[y]=="01011001") {
+    binario[y]="Y";
+  }
+  else if (conjuntobinario[y]=="01011010") {
+    binario[y]="01011010";
+  }
+  else if (conjuntobinario[y]=="00100000") {
+    binario[y]=" ";
+  }
+  if (conjuntobinario[y]=="01100001") {
+    binario[y]="a";
+  }
+  else if (conjuntobinario[y]=="01100010") {
+    binario[y]="b";
+  }
+  else if (conjuntobinario[y]=="01100011") {
+    binario[y]="c";
+  }
+  else if (conjuntobinario[y]=="01100100") {
+    binario[y]="d";
+  }
+  else if (conjuntobinario[y]=="01100101") {
+    binario[y]="e";
+  }
+  else if (conjuntobinario[y]=="01100110") {
+    binario[y]="f";
+  }
+  else if (conjuntobinario[y]=="01100111") {
+    binario[y]="g";
+  }
+  else if (conjuntobinario[y]=="01101000") {
+    binario[y]="h";
+  }
+  else if (conjuntobinario[y]=="01101001") {
+    binario[y]="i";
+  }
+  else if (conjuntobinario[y]=="01101010") {
+    binario[y]="j";
+  }
+  else if (conjuntobinario[y]=="01101011") {
+    binario[y]="k";
+  }
+  else if (conjuntobinario[y]=="01101100") {
+    binario[y]="l";
+  }
+  else if (conjuntobinario[y]=="01101101") {
+    binario[y]="m";
+  }
+  else if (conjuntobinario[y]=="01101110") {
+    binario[y]="n";
+  }
+  else if (conjuntobinario[y]=="01101111") {
+    binario[y]="o";
+  }
+  else if (conjuntobinario[y]=="01110000") {
+    binario[y]="p";
+  }
+  else if (conjuntobinario[y]=="01110001") {
+    binario[y]="q";
+  }
+  else if (conjuntobinario[y]=="01110010") {
+    binario[y]="r";
+  }
+  else if (conjuntobinario[y]=="01110011") {
+    binario[y]="s";
+  }
+  else if (conjuntobinario[y]=="01110100") {
+    binario[y]="t";
+  }
+  else if (conjuntobinario[y]=="01110101") {
+    binario[y]="u";
+  }
+  else if (conjuntobinario[y]=="01110110") {
+    binario[y]="v";
+  }
+  else if (conjuntobinario[y]=="01110111") {
+    binario[y]="w";
+  }
+  else if (conjuntobinario[y]=="01111000") {
+    binario[y]="x";
+  }
+  else if (conjuntobinario[y]=="01111001") {
+    binario[y]="y";
+  }
+  else if (conjuntobinario[y]=="01111010") {
+    binario[y]="z";
+  }
+}
+
+var resultado = [];
+resultado[0] = "";
+var conteoresultado = 0;
+//var conteo1 = 0;
+for (var i = 0; i < binario.length; i++) {
+  resultado[0]=resultado[0]+binario[i];
+}
+alert(resultado);
+
+//alert(binario);
+
+//Detectamos si el usuario ingreso un valor
+if (textoclaro != null){
+//alert("Tu codigo es: " + textoclaro);
+//////////////////////////////////////7
+//alert(a);
+}
+//Detectamos si el usuario NO ingreso un valor
+else {
+alert("No has ingresado ningún mensaje");
+}
+}
+</script>
+</head>
+<body>
+<form>
+<input type="button" onclick="PromptDemo()" value="Click para ingresar el mensaje en claro" />
+</form>
+</body>
+</html>
